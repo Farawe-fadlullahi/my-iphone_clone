@@ -1,0 +1,370 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iphone{
+    margin-top: 10px;
+    width: 290px;
+    height: 550px;
+    border: 7px solid black;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+.nav{
+    width: 50%;
+    background-color: black;
+    height: 35px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 100;
+}
+.nava{
+    background-color: rgb(66, 66, 66);
+    width: 35px;
+    height: 8px;
+    border-radius: 200px 200px;
+    margin-right: 10px;
+}
+.navb{
+    background-color: rgba(255, 255, 255, 0.531);
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    margin-right: -35px;
+}
+.on_off{
+    background-color: black;
+    width: 8px;
+    height: 60px;
+    margin-left: -4px;
+    margin-top: -230px;
+    border-radius: 200px 200px ;
+}
+.lockscreen_sect{
+    width: 290px;
+    height: 550px;
+    background-image: url(iphon2\ img.JPG);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.password_sect{
+    width: 290px;
+    height: 550px;
+    position: absolute;
+    background-image: url(iphon2\ img.JPG);
+    background-size: cover;
+    background-position: center;
+}
+.cover{
+    width: 290px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.lock{
+    width: 60px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.word_lock{
+    width: 80%;
+    height: 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pin{
+    width: 65%;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.pin span{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 1px solid white;
+    background-color: transparent;
+}
+.keys{
+    width: 80%;
+    height: 250px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.keys button{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: 700;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    color: white;
+}
+.home_sect{
+    width: 290px;
+    height: 550px;
+    position: absolute;
+    background-color: blue;
+}
+.carousel{
+    /* background-color: rgb(11, 211, 88); */
+    width: 290px;
+    height: 550px;
+}
+.first{
+    position: relative;
+    width: 290px;
+    height: 550px;
+    background-color: aqua;
+}
+.sea{
+    position: absolute;
+    width: 95%;
+    height:23% ;
+    background-color: rgb(85, 0, 255);
+    top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.left,.right{
+    width: 47%;
+    height: 90%;
+    border-radius: 15px;
+    background-color: black;
+    overflow-y: scroll;
+}
+.left::-webkit-scrollbar {display: none;}
+.right::-webkit-scrollbar {display: none;}
+.widgeta,.widgetb,.widgetc{
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+}
+.widgetb{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 255, 8);
+}
+.widgetc{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 0, 106);
+}
+.seba{
+    position: absolute;
+    width: 95%;
+    height:48% ;
+    /* background-color: rgb(51, 255, 0); */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 12px;
+}
+.seba button{
+    position: relative;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(127, 255, 212);
+    border: 0;
+
+}
+button svg{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 0;
+}
+.sec{
+    position: absolute;
+    width: 90%;
+    height:12% ;
+    border-radius: 5px;
+    background-color: rgb(0, 255, 183);
+    bottom: 70px;
+}
+.second{
+    position: relative;
+    width: 290px;
+    height: 550px;
+    background-color: rgb(225, 29, 29);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.third{
+    width: 290px;
+    height: 550px;
+    background-color: rgb(118, 213, 15);
+}
+.fourth{
+    width: 290px;
+    height: 550px;
+    background-color: rgb(213, 15, 101);
+}
+.topper{
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topa{
+    width: 26%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topaa{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -5px;
+}
+.topb{
+    width: 50%;
+    height: 100%;
+    background-color: rgba(17, 11, 196, 0);
+}
+.service{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+.service p{
+    animation-name: Airtel;
+    animation-iteration-count:infinite ;
+    animation-duration: 9s;
+    animation-timing-function: ease;
+}
+.footer {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footera {
+    position: absolute;
+    bottom: 0;
+    width:85%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.da {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.124);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home_button{
+    width: 40%;
+    height: 2.8px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 88px;
+    border-radius: 20px 20px;
+    animation-name:swipe ;
+    animation-iteration-count: infinite;
+    animation-duration: 5s ;
+    animation-direction: alternate;
+}
+.pdance{
+    animation-name:pdance ;
+    animation-iteration-count: infinite;
+    animation-duration: 5s ;
+    animation-direction: alternate;
+}
+.widget{
+    background-color: antiquewhite;
+    width: 80%;
+    height: 100px;
+    position: relative;
+    top: 30px;
+}
+
+
+
+
+
+
+
+@keyframes Airtel{
+    from{
+        transform: translateX(90px);
+    }
+    to{
+        transform: translateX(-100px);
+    }
+}
+@keyframes swipe {
+    from{
+        transform: translateY(5px);
+    }
+    to{
+        transform: translateY(10px);
+    }
+}
+@keyframes pdance {
+    from{
+        transform: translateY(5px);
+    }
+    to{
+        transform: translateY(10px);
+    }
+}
+@keyframes incorrect {
+    from{
+        right: 8px;
+    }
+    to{
+        left: 8px;
+    }
+}
