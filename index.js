@@ -5,9 +5,25 @@ let password_sect = document.getElementById('password_sect')
 let home_sect = document.getElementById('home_sect')
 let wrong_password = document.getElementById('wrong_password')
 let Try_again = document.getElementById('Try_again')
+let sleeps = document.getElementById('sleeps')
 let pin = document.getElementById('pin')
+let h2tm = document.getElementById('h2tm')
+let pday = document.getElementById('pday')
+let span_m_y = document.getElementById('span_m_y')
+let con =false
 let user_pass=''
 let i=0
+let date=new Date()
+let day=['sunday','monday','tuesday','wednesday','thursday','friday','saturday']
+let month=['jan','feb','march','april','may','june','july','agust','september','october','december']
+function un_see() {
+    con=true;
+    sleeps.style.visibility='visible'
+    lockscreen_sect.style.display = 'none'
+    password_sect.style.display = 'none'
+    home_sect.style.display = 'none'
+}
+ un_see()
 function outline_6() {
 for (let index = 0; index < [...Array(6)].length; index++) {
     pin.innerHTML+=`<span class="fill" id="fill${index}"></span>`
@@ -15,8 +31,23 @@ for (let index = 0; index < [...Array(6)].length; index++) {
 }
 outline_6()
 function sleep() {
-    lockscreen_sect.style.display == 'block' || password_sect.style.display == 'block' || home_sect.style.display == 'block' ? lockscreen_sect.style.display = 'none' : lockscreen_sect.style.display = 'block'
-    lockscreen_sect.style.display == 'none' ? iphone.style.backgroundColor = 'black' : iphone.style.backgroundColor = ''
+    if (con==true) {
+        sleeps.style.visibility='visible'
+        lockscreen_sect.style.display = 'none'
+        password_sect.style.display = 'none'
+        home_sect.style.display = 'none'
+        con=!con
+    }else{
+    sleeps.style.visibility='hidden'
+    lockscreen_sect.style.display = 'block'
+    lockscreen_sect.style.zIndex = '2'
+    password_sect.style.display = 'block'
+    home_sect.style.display = 'block'
+    home_sect.style.zIndex = '1'
+    password_sect.style.zIndex = '-1'
+
+    con=!con
+    }
 }
 function displock() {
     password_sect.style.display = 'none'
@@ -42,6 +73,7 @@ function btn(params) {
     user_pass+=params//empty user_pass changed to params i.e displaying d argument of btn n also {wat ur inputing to d password fill} 
     if (user_pass==password) {
         enter()
+        clear_each()
         // return
     }else{
         if (user_pass.length==6) {
@@ -67,3 +99,10 @@ function clear_each() {
     });
     user_pass=''
 }
+function produce_time() {
+    h2tm.innerHTML=`${date.getHours()}:${date.getMinutes()}` 
+    pday.innerHTML=`${day[date.getDay()]}`
+    span_m_y.innerHTML=`${month[date.getMonth()]},${date.getFullYear()}`
+}
+produce_time()
+localStorage.setItem('password to iphone ','200950')
