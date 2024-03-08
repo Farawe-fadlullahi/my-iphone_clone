@@ -37,7 +37,7 @@ function un_see() {
     password_sect.style.display = 'none'
     home_sect.style.display = 'none'
 }
-//  un_see()
+ un_see()
 function outline_6() {
 for (let index = 0; index < [...Array(6)].length; index++) {
     pin.innerHTML+=`<span class="fill" id="fill${index}"></span>`
