@@ -10,6 +10,20 @@ let pin = document.getElementById('pin')
 let h2tm = document.getElementById('h2tm')
 let pday = document.getElementById('pday')
 let span_m_y = document.getElementById('span_m_y')
+let pa_caro = document.getElementById('pa_caro')
+let calc_section = document.getElementById('calc_section')
+let note_section = document.getElementById('note_section')
+let clock_section = document.getElementById('clock_section')
+let photo_section = document.getElementById('photo_section')
+let music_section = document.getElementById('music_section')
+let camera_section = document.getElementById('camera_section')
+let call_section = document.getElementById('call_section')
+let message_section = document.getElementById('message_section')
+let weather_section = document.getElementById('weather_section')
+let contact_section = document.getElementById('contact_section')
+let game_section = document.getElementById('game_section')
+let sub_section = document.getElementById('sub_section')
+let cart_section = document.getElementById('cart_section')
 let con =false
 let user_pass=''
 let i=0
@@ -23,7 +37,7 @@ function un_see() {
     password_sect.style.display = 'none'
     home_sect.style.display = 'none'
 }
- un_see()
+//  un_see()
 function outline_6() {
 for (let index = 0; index < [...Array(6)].length; index++) {
     pin.innerHTML+=`<span class="fill" id="fill${index}"></span>`
@@ -74,21 +88,19 @@ function btn(params) {
     if (user_pass==password) {
         enter()
         clear_each()
-        // return
     }else{
         if (user_pass.length==6) {
             
     console.log(user_pass.length);
-    Try_again.innerText=`Try Again`
-    wrong_password.innerText=`Wrong Password`
     pin.style.animationName = 'incorrect'
     pin.style.animationDuration='0.2s'
     pin.style.animationDirection='alternate'
-    pin.style.animationIterationCount='2'
+    pin.style.animationIterationCount='3'
+    Try_again.innerText=`Try Again`
+    wrong_password.innerText=`Wrong Password`
     clear_each()
     console.log(user_pass.length);
-     }
-    }
+     }}
 }
 function clear_each() {
     i=0
@@ -106,3 +118,60 @@ function produce_time() {
 }
 produce_time()
 localStorage.setItem('password to iphone ','200950')
+
+function app_home() {
+    pa_caro.style.display='block'
+    calc_section.style.display='none'
+}
+function app_calc() {
+    pa_caro.style.display='none'
+    calc_section.style.display='block'
+}
+function app_note() {
+    pa_caro.style.display='none'
+    note_section.style.display='block'
+}
+function app_clock() {
+    pa_caro.style.display='none'
+    clock_section.style.display='block'
+}
+function app_photo() {
+    pa_caro.style.display='none'
+    photo_section.style.display='block'
+}
+function app_music() {
+    pa_caro.style.display='none'
+    music_section.style.display='block'
+}
+function app_camera() {
+    pa_caro.style.display='none'
+    camera_section.style.display='block'
+}
+function app_call() {
+    pa_caro.style.display='none'
+    call_section.style.display='block'
+}
+function app_message() {
+    pa_caro.style.display='none'
+    message_section.style.display='block'
+}
+function app_weather() {
+    pa_caro.style.display='none'
+    weather_section.style.display='block'
+}
+function app_contact() {
+    pa_caro.style.display='none'
+    contact_section.style.display='block'
+}
+function app_game() {
+    pa_caro.style.display='none'
+    game_section.style.display='block'
+}
+function app_sub() {
+    pa_caro.style.display='none'
+    sub_section.style.display='block'
+}
+function app_cart() {
+    pa_caro.style.display='none'
+    cart_section.style.display='block'
+}
