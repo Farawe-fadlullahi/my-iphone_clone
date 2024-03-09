@@ -24,6 +24,20 @@ let contact_section = document.getElementById('contact_section')
 let game_section = document.getElementById('game_section')
 let sub_section = document.getElementById('sub_section')
 let cart_section = document.getElementById('cart_section')
+let loading = document.getElementById('loading')
+let calc_inner = document.getElementById('calc_inner')
+let note_inner = document.getElementById('note_inner')
+let clock_inner = document.getElementById('clock_inner')
+let photo_inner = document.getElementById('photo_inner')
+let music_inner = document.getElementById('music_inner')
+let camera_inner = document.getElementById('camera_inner')
+let call_inner = document.getElementById('call_inner')
+let message_inner = document.getElementById('message_inner')
+let weather_inner = document.getElementById('weather_inner')
+let contact_inner = document.getElementById('contact_inner')
+let game_inner = document.getElementById('game_inner')
+let sub_inner = document.getElementById('sub_inner')
+let cart_inner = document.getElementById('cart_inner')
 let con =false
 let user_pass=''
 let i=0
@@ -119,59 +133,174 @@ function produce_time() {
 produce_time()
 localStorage.setItem('password to iphone ','200950')
 
-function app_home() {
+function calc_home() {
     pa_caro.style.display='block'
     calc_section.style.display='none'
+}
+function note_home() {
+    pa_caro.style.display='block'
+    note_section.style.display='none'
+}
+function clock_home() {
+    pa_caro.style.display='block'
+    clock_section.style.display='none'
+}
+function photo_home() {
+    pa_caro.style.display='block'
+    photo_section.style.display='none'
+}
+function music_home() {
+    pa_caro.style.display='block'
+    music_section.style.display='none'
+}
+function camera_home() {
+    pa_caro.style.display='block'
+    camera_section.style.display='none'
+}
+function call_home() {
+    pa_caro.style.display='block'
+    call_section.style.display='none'
+}
+function message_home() {
+    pa_caro.style.display='block'
+    message_section.style.display='none'
+}
+function weather_home() {
+    pa_caro.style.display='block'
+    weather_section.style.display='none'
+}
+function contact_home() {
+    pa_caro.style.display='block'
+    contact_section.style.display='none'
+}
+function game_home() {
+    pa_caro.style.display='block'
+    game_section.style.display='none'
+}
+function sub_home() {
+    pa_caro.style.display='block'
+    sub_section.style.display='none'
+}
+function cart_home() {
+    pa_caro.style.display='block'
+    cart_section.style.display='none'
 }
 function app_calc() {
     pa_caro.style.display='none'
     calc_section.style.display='block'
+    calc_inner.style.display='none'
+    setTimeout(()=>{
+         calc_inner.style.display='block'
+         loading.style.display='none'
+    },3000);
+    loading.style.display='block'
 }
 function app_note() {
     pa_caro.style.display='none'
     note_section.style.display='block'
+    note_inner.style.display='none'
+    setTimeout(()=>{
+        note_inner.style.display='block'
+        note_inner.style.zIndex='5'
+
+    },3000);
 }
 function app_clock() {
     pa_caro.style.display='none'
     clock_section.style.display='block'
+    clock_inner.style.display='none'
+    setTimeout(()=>{
+         clock_inner.style.display='block'
+         clock_inner.style.zIndex='5'
+    },3000);
 }
 function app_photo() {
     pa_caro.style.display='none'
     photo_section.style.display='block'
+    photo_inner.style.display='none'
+    setTimeout(()=>{
+         photo_inner.style.display='block'
+         photo_inner.style.zIndex='5'
+    },3000);
 }
 function app_music() {
     pa_caro.style.display='none'
     music_section.style.display='block'
+    music_inner.style.display='none'
+    setTimeout(()=>{
+         music_inner.style.display='block'
+         music_inner.style.zIndex='5'
+    },3000);
 }
 function app_camera() {
     pa_caro.style.display='none'
     camera_section.style.display='block'
+    camera_inner.style.display='none'
+    setTimeout(()=>{
+         camera_inner.style.display='block'
+         camera_inner.style.zIndex='5'
+    },3000);
 }
 function app_call() {
     pa_caro.style.display='none'
     call_section.style.display='block'
+    call_inner.style.display='none'
+    setTimeout(()=>{
+         call_inner.style.display='block'
+         call_inner.style.zIndex='5'
+    },3000);
 }
 function app_message() {
     pa_caro.style.display='none'
     message_section.style.display='block'
+    message_inner.style.display='none'
+    setTimeout(()=>{
+         message_inner.style.display='block'
+         message_inner.style.zIndex='5'
+    },3000);
 }
 function app_weather() {
     pa_caro.style.display='none'
-    weather_section.style.display='block'
+   weather_section.style.display='block'
+   weather_inner.style.display='none'
+    setTimeout(()=>{
+        weather_inner.style.display='block'
+        weather_inner.style.zIndex='5'
+    },3000);
 }
 function app_contact() {
     pa_caro.style.display='none'
     contact_section.style.display='block'
+    contact_inner.style.display='none'
+    setTimeout(()=>{
+         contact_inner.style.display='block'
+         contact_inner.style.zIndex='5'
+    },3000);
 }
 function app_game() {
     pa_caro.style.display='none'
     game_section.style.display='block'
+    game_inner.style.display='none'
+    setTimeout(()=>{
+         game_inner.style.display='block'
+         game_inner.style.zIndex='5'
+    },3000);
 }
 function app_sub() {
     pa_caro.style.display='none'
     sub_section.style.display='block'
+    sub_inner.style.display='none'
+    setTimeout(()=>{
+         sub_inner.style.display='block'
+         sub_inner.style.zIndex='5'
+    },3000);
 }
 function app_cart() {
     pa_caro.style.display='none'
     cart_section.style.display='block'
+    cart_inner.style.display='none'
+    setTimeout(()=>{
+         cart_inner.style.display='block'
+         cart_inner.style.zIndex='5'
+    },3000);
 }

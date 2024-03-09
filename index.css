@@ -526,12 +526,31 @@ aside[a]{
     top: 36px;
     left: 15px;
 }
+button[svg]{
+    width: 100px;
+    height: 100px;
+    /* display: none; */
+    background-color: rgb(25, 25, 25);
+    color: white;
+    position: absolute;
+    top: 100PX;
+    z-index: 3;
+    right: 90px;
+    border: 1px solid white;
+    /* display: none ; */
+    
+}
+button[svg] p{
+    font-size: 10px;
+    font-family: sans-serif;
+}
  button[back]{
     background-color: rgba(127, 255, 212, 0);
     display: flex; 
     align-items: center;
     border: 0;
 }
+
 
 
 
