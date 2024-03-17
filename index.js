@@ -38,12 +38,24 @@ let contact_inner = document.getElementById('contact_inner')
 let game_inner = document.getElementById('game_inner')
 let sub_inner = document.getElementById('sub_inner')
 let cart_inner = document.getElementById('cart_inner')
+let under_construction_section = document.getElementById('under_construction_section')
+let calc_screen = document.getElementById('calc_screen')
+let btng = document.getElementById('btng')
+let btngr = document.getElementById('btngr')
+let btngra = document.getElementById('btngra')
+let btngray = document.getElementById('btngray')
+let lockscreen_date = document.getElementById('lockscreen_date')
+let lockscreen_time = document.getElementById('lockscreen_time')
 let con =false
+let kept_value=''
+let second=''
+let ans=''
+let operator=''
 let user_pass=''
 let i=0
 let date=new Date()
 let day=['sunday','monday','tuesday','wednesday','thursday','friday','saturday']
-let month=['jan','feb','march','april','may','june','july','agust','september','october','december']
+let month=['January','February','March','April','May','June','July','Agust','September','October','November','December']
 function un_see() {
     con=true;
     sleeps.style.visibility='visible'
@@ -51,7 +63,9 @@ function un_see() {
     password_sect.style.display = 'none'
     home_sect.style.display = 'none'
 }
- un_see()
+//  un_see()
+lockscreen_date.innerHTML=`${day[date.getDay()]}, ${date.getDate()} ${month[date.getMonth()]}`
+lockscreen_time.innerHTML=`${date.getHours()}:${date.getMinutes()}`
 function outline_6() {
 for (let index = 0; index < [...Array(6)].length; index++) {
     pin.innerHTML+=`<span class="fill" id="fill${index}"></span>`
@@ -94,7 +108,7 @@ function enter() {
     home_sect.style.zIndex = '3'
     password_sect.style.zIndex = '2'
 }
-function btn(params) {
+function btn_password(params) {
     let password='200950'
     document.getElementById(`fill${i}`).style.backgroundColor='white'//the span
     i++//movement of shade
@@ -304,3 +318,71 @@ function app_cart() {
          cart_inner.style.zIndex='5'
     },3000);
 }
+function under_construction() {
+    pa_caro.style.display='none'
+    under_construction_section.style.display='block'
+}
+
+function under_construction_home() {
+    pa_caro.style.display='block'
+    photo_section.style.display='none'
+}
+function btn(params) {
+    calc_screen.value+=params
+}function but(signs) {
+   console.log(signs);
+   operator=signs
+   console.log(operator);
+
+if (operator=='+') {
+    btngray.style.backgroundColor='gray'
+    kept_value=calc_screen.value
+    calc_screen.value=''
+} 
+if (operator=='-') {
+ btngra.style.backgroundColor='gray'
+ kept_value=calc_screen.value
+ calc_screen.value=''
+} 
+if (operator=='*') {
+ btngr.style.backgroundColor='gray'
+ kept_value=calc_screen.value
+ calc_screen.value=''
+} 
+if (operator=='/') {
+ btng.style.backgroundColor='gray'
+ kept_value=calc_screen.value
+ calc_screen.value=''
+} 
+}
+function equals() {
+ second=calc_screen.value
+if (operator=='+') {
+        btngray.style.backgroundColor='#fa9712'
+     calc_screen.value=Number(kept_value)+Number(second)
+ } 
+ if (operator=='-') {
+     btngra.style.backgroundColor='#fa9712'
+  calc_screen.value=Number(kept_value)-Number(second)
+} 
+if (operator=='*') {
+    btngr.style.backgroundColor='#fa9712'
+ calc_screen.value=Number(kept_value)*Number(second)
+} 
+if (operator=='/') {
+    btng.style.backgroundColor='#fa9712'
+ calc_screen.value=Number(kept_value) / Number(second)
+} 
+}
+function clear_() {
+    calc_screen.value=''
+    kept_value=''
+    second=''
+}
+function bu(interger) {
+    calc_screen.value=interger+calc_screen.value
+}
+function b(percent) {
+    calc_screen.value=calc_screen.value*1/100
+}
+

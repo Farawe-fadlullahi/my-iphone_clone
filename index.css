@@ -179,6 +179,18 @@ body{
     background-image: url(https://cdn.pixabay.com/photo/2022/11/06/10/54/clock-7573739_1280.jpg);
     background-size: cover;
     background-position: center;
+    padding-left: 5px;
+}
+.widgetaa{
+    width: 100%;
+    height: 100%;
+    background-image: url(globe.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 div[bb]{
     display: none;
@@ -191,6 +203,14 @@ div[bb]{
     display: flex;
     align-items: center;
     overflow-x: scroll;
+}
+.widgetbb{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(77, 49, 217);
+    display: flex;
+    align-items: center;
 }
 .widgetb:hover div[bb]{ 
     display: block;
@@ -205,6 +225,16 @@ div[bb]{
     width: 100%;
     height: 100%;
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.widgetcc{
+    color: white;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(179, 58, 58);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -390,11 +420,34 @@ div[bb]{
     animation-direction: alternate;
 }
 .widget_on_lockscreen{
-    background-color: antiquewhite;
     width: 80%;
-    height: 100px;
+    height: 130px;
     position: relative;
-    top: 30px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.padlock{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.date{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.time{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .phone_charging_circle{
     width: 65px;
@@ -414,8 +467,8 @@ aside[a]{
     bottom: 25%;
     
 }
-.calc_section,.note_section,.clock_section,.photo_section,.music_section,.camera_section,.call_section,.message_section,.weather_section,.contact_section,.game_section,.sub_section,.cart_section{
-    background-color: blue;
+.calc_section,.note_section,.clock_section,.photo_section,.music_section,.camera_section,.call_section,.message_section,.weather_section,.contact_section,.game_section,.sub_section,.cart_section,.under_construction{
+    background-color: black;
     width: 100%;
     height: 100%;
     display: none;
@@ -423,7 +476,7 @@ aside[a]{
 
 }
 .calc_inner{
-    background-color: brown;
+    background-color: black;
     width: 90%;
     height: 90%;
     position: absolute;
@@ -537,6 +590,7 @@ button[svg]{
     z-index: 3;
     right: 90px;
     border: 1px solid white;
+    box-shadow: 0 0 20px 0 white;
     /* display: none ; */
     
 }
@@ -545,14 +599,60 @@ button[svg] p{
     font-family: sans-serif;
 }
  button[back]{
-    background-color: rgba(127, 255, 212, 0);
+    background-color:rgba(255, 255, 255, 0.962);
     display: flex; 
     align-items: center;
     border: 0;
+    color: rgba(255, 255, 255, 0.962);
 }
-
-
-
+.disp_buttons{
+    width: 100%;
+    height: 73%;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 10px;
+}
+.calc_inner input{
+    width: 100%;
+    height: 60px;
+    font-size: 45px;
+    font-weight: 600;
+    position: absolute;
+    text-align: right;
+    outline: none;
+    border: 0;
+    top: 60px;
+    color: white;
+    background-color: black;
+}
+.button{
+    width: 61px;
+    height: 61px;
+    border-radius: 100%;
+    margin-top: 9px;
+    border: 0;
+    margin-left: 0.5px;
+    background-color: #393939;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+}
+button[a]{
+    background-color: #d2d2d2;
+    color: black;
+}
+button[y]{
+    color: white;
+    background-color: #fa9712;
+}
+button[merge]{
+    width: 122px;
+    height: 61px;
+    border-radius: 40px;
+    margin-top: 5px;
+    border: 0;
+    margin-left: 3px;
+}
 
 
 
