@@ -1241,7 +1241,61 @@
                                     d="M3.076 5.617A1 1 0 0 1 4 5h10a7 7 0 1 1 0 14H5a1 1 0 1 1 0-2h9a5 5 0 1 0 0-10H6.414l1.793 1.793a1 1 0 0 1-1.414 1.414l-3.5-3.5a1 1 0 0 1-.217-1.09" />
                             </g>
                         </svg></button>
-                    hey im d cart
+                        <select style="margin-left: 20px;margin-top: 5px; width: 70px; background-color: black;color: white; outline:1px solid white; font-size: 10px; box-shadow: 0 0 10px 0 white; border-radius: 5px;" name="" id="goods">
+                            <option value="">goods</option>
+                            <option value="shoe">shoe</option>
+                            <option value="bag">bag</option>
+                            <option value="jean">jean</option>
+                            <option value="baggy">baggy</option>
+                            <option value="shirt">shirt</option>
+                            <option value="jean jacket">jean jacket</option>
+                            <option value="sneakers">sneakers</option>
+                            <option value="glasses">glasses</option>
+                            <option value="tie">tie</option>
+                            <option value="huddy">huddy</option>
+                        </select>
+                        <select style="margin-left: 20px;margin-top: 5px; width: 70px; background-color: black;color: white; outline:1px solid white; font-size: 10px; box-shadow: 0 0 10px 0 white; border-radius: 5px;" name="" id="brand">
+                            <option value="">brand</option>
+                            <option value="Gucci">Gucci</option>
+                            <option value="Lacoste">Lacoste</option>
+                            <option value="lakers">lakers</option>
+                            <option value="Lv">Lv</option>
+                            <option value="Balenciaga">Balenciaga</option>
+                            <option value="off white">off white</option>
+                            <option value="nike">nike</option>
+                            <option value="dior">dior</option>
+                            <option value="puma">puma</option>
+                            <option value="city boy">city boy</option>
+                        </select>
+                        <input style="margin-left: 20px;margin-top: 5px; width: 40px; background-color: rgba(255, 255, 255, 0.701);color: black; outline:1px solid white; font-size: 12px; box-shadow: 0 0 10px 0 white; border-radius: 5px;" type="number" id="qty" placeholder="quantity">
+                        
+                        <select style="margin-left: 20px;margin-top: 5px; width: 70px; background-color: black;color: white; outline:1px solid white; font-size: 10px; box-shadow: 0 0 10px 0 white; border-radius: 5px;" name="" id="price">
+                            <option value="">price($)</option>
+                            <option value="100">$100</option>
+                            <option value="200">$200</option>
+                            <option value="300">$300</option>
+                            <option value="500">$500</option>
+                            <option value="1000">$1000</option>
+                            <option value="5000">$5000</option>
+                            <option value="10000">$10000</option>
+                            <option value="15000">$15000</option>
+                            <option value="20000">$20000</option>
+                            <option value="50000">$50000</option>
+                        </select>
+                        <button onclick="add_to_list()" style="margin-left: 20px;margin-top: 5px; width: 70px; background-color: black;color: white; outline:1px solid white; font-size: 10px; box-shadow: 0 0 10px 0 white; border-radius: 5px;">add to list</button>
+                        <div class="list">
+                            <table  style="border: 2px solid black ; border-collapse: collapse;">
+                                <thead  style="border: 2px solid black ;  border-collapse: collapse;">
+                                    <th style="border: 2px solid black ; padding: 2px; border-collapse: collapse;">brand</th>
+                                    <th style="border: 2px solid black ; padding: 2px; border-collapse: collapse;">goods</th>
+                                    <th style="border: 2px solid black ; padding: 2px; border-collapse: collapse;">price(1)</th>
+                                    <th style="border: 2px solid black ; padding: 2px; border-collapse: collapse;">qty</th>
+                                    <th style="border: 2px solid black ; padding: 2px; border-collapse: collapse;">t_price</th>
+                                    <th style="border: 2px solid black ; padding: 2px; border-collapse: collapse;">actions</th>
+                                </thead>
+                                <tbody id="list_tbody"></tbody>
+                            </table>
+                        </div>
                 </div>
                 <button svg id="loading">
                     <p>cart</p>

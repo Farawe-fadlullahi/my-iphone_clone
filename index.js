@@ -46,6 +46,11 @@ let btngra = document.getElementById('btngra')
 let btngray = document.getElementById('btngray')
 let lockscreen_date = document.getElementById('lockscreen_date')
 let lockscreen_time = document.getElementById('lockscreen_time')
+let brand = document.getElementById('brand')
+let price = document.getElementById('price')
+let goods = document.getElementById('goods')
+let qty = document.getElementById('qty')
+let list_tbody = document.getElementById('list_tbody')
 let con =false
 let kept_value=''
 let second=''
@@ -63,7 +68,7 @@ function un_see() {
     password_sect.style.display = 'none'
     home_sect.style.display = 'none'
 }
-//  un_see()
+ un_see()
 lockscreen_date.innerHTML=`${day[date.getDay()]}, ${date.getDate()} ${month[date.getMonth()]}`
 lockscreen_time.innerHTML=`${date.getHours()}:${date.getMinutes()}`
 function outline_6() {
@@ -385,4 +390,39 @@ function bu(interger) {
 function b(percent) {
     calc_screen.value=calc_screen.value*1/100
 }
+let list_array=JSON.parse(localStorage.getItem('cart_list'))||[]
 
+function add_to_list() {
+localStorage.setItem('cart_list',JSON.stringify(list_array))
+disp_list()
+    let list_obj={
+        Brand:brand.value,
+        Price:price.value,
+        quantity:qty.value,
+        Goods:goods.value
+    }
+list_array.push(list_obj)
+    list_tbody.innerHTML=''
+    disp_list()
+
+}
+function del(ind) {
+    list_array.splice(ind,1)
+    list_tbody.innerHTML=''
+    disp_list()
+}
+function disp_list() {
+    
+    list_array.forEach((element,i) => {
+        list_tbody.innerHTML+=
+        `<tr>
+        <td style="border: 2px solid black; border-collapse: collapse; padding: 2px ">${element.Brand}</td>
+        <td style="border: 2px solid black; border-collapse: collapse; padding: 2px ">${element.Goods}</td>
+        <td style="border: 2px solid black; border-collapse: collapse; padding: 2px ">$${element.Price}</td>
+        <td style="border: 2px solid black; border-collapse: collapse; padding: 2px ">${element.quantity}</td>
+        <td style="border: 2px solid black; border-collapse: collapse; padding: 2px ">$${element.quantity*element.Price}</td>
+        <td style=" border: 2px solid black; border-collapse: collapse; padding: 1px "><button onclick='del(${i})'  style="display:flex; align-items:center; width: 30px; background-color: black;color: white; outline:1px solid white; font-size: 7px; box-shadow: 0 0 10px 0 white; border-radius: 5px;">delete</button></td>
+        </tr>
+        `
+    });
+    }
