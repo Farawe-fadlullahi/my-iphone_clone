@@ -485,12 +485,16 @@ aside[a]{
     left: 15px;
 }
 .note_inner{
-    background-color: brown;
+    background-color: black;
     width: 90%;
     height: 90%;
     position: absolute;
     top: 36px;
     left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .clock_inner{
     background-color: brown;
@@ -670,7 +674,183 @@ button[merge]{
 table,thead,th,tbody,td{
     font-size: 13px;
 }
+.note_disp{
+    width: 99%;
+    height: 50%;
+    background-color: black;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    overflow-y: scroll;
+}
+.note_disp::-webkit-scrollbar{
+    display: none;
+}
+div[note_dis]{
+    margin-bottom: 10px;
+    width: 90%;
+    height: fit-content;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 20px 0 white;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* overflow-x: scroll; */
+    /* overflow-y: scroll; */
+    flex-wrap: wrap;
+}
+/* div[note_dis]::-webkit-scrollbar{
+    display: none;
+} */
+.note_disp textarea{
+    width: 100%;
+    height:100%;
+}
+.note_keys{
+    width: 100%;
+    height: 40%;
+    background-color: #222224;
+}
+.note_keys_capital{
+    width: 100%;
+    height: 40%;
+    background-color: #222224;
+    
+}
+.note_keys_no{
+    width: 100%;
+    height: 40%;
+    background-color: #222224;
+    
+}
+.note_keys_sy{
+    width: 100%;
+    height: 40%;
+    background-color: #222224;
+    
+}
+.note_keys button{
+    width: 29px;
+    height: 35PX;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+    border-radius: 5px;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #646465;
+    color: white;
 
+}
+.note_keys_capital button{
+    width: 29px;
+    height: 35PX;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+    border-radius: 5px;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #646465;
+    color: white;
+}
+.note_keys_no button{
+    width: 29px;
+    height: 35PX;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+    border-radius: 5px;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #646465;
+    color: white;
+}
+.note_keys_sy button{
+    width: 29px;
+    height: 35PX;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+    border-radius: 5px;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #646465;
+    color: white;
+}
+.note_keys_a{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+.note_keys_b{
+    width: 92%;
+    height: 25%;
+    margin-left: 12px;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+.note_keys_c{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+.note_keys_d{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+button[ca]{
+    width: 50px;
+    height: 35px;
+}
+button[no]{
+    width: 65px;
+    height: 35px;
+    font-size: 13px;
+    font-weight: 600;
+}
+button[space]{
+    width: 130px;
+    height: 35px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.note_keys_capital{
+    display: none;
+}
+.note_keys_no{
+    display: none;
+}
 
 
 

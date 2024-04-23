@@ -559,7 +559,180 @@
                                     d="M3.076 5.617A1 1 0 0 1 4 5h10a7 7 0 1 1 0 14H5a1 1 0 1 1 0-2h9a5 5 0 1 0 0-10H6.414l1.793 1.793a1 1 0 0 1-1.414 1.414l-3.5-3.5a1 1 0 0 1-.217-1.09" />
                             </g>
                         </svg></button>
-                    hey im d note
+                        <div class="note_disp" id="note_disp"></div>
+                        <textarea placeholder="input something" name="" id="note_input" cols="30" rows="10" style="background-color: black; color: white ; border: 1px solid white; box-shadow: 0 0 20 0 white; width: 99%; margin-left: 1px;"></textarea>
+                        <button onclick="add_note()" style="width: 50px; height: 30px; border-radius: 5px; margin-left: 105px; border: 1px solid white; background-color: black; color: white;">done</button>
+                        <button style='margin-bottom: 0; margin-right: 0; padding: 0; width:30px;font-size:10px; height:20px; border:1px solid black; border-radius: 5px;' onclick="back_textarea()">back</button>
+                        <div class="note_keys" id="note_keys">
+                            <div class="note_keys_a">
+                                <button onclick="key('q')">q</button>
+                                <button onclick="key('w')">w</button>
+                                <button onclick="key('e')">e</button>
+                                <button onclick="key('r')">r</button>
+                                <button onclick="key('t')">t</button>
+                                <button onclick="key('y')">y</button>
+                                <button onclick="key('u')">u</button>
+                                <button onclick="key('i')">i</button>
+                                <button onclick="key('o')">o</button>
+                                <button onclick="key('p')">p</button>
+                            </div>
+                            <div class="note_keys_b">
+                                <button onclick="key('a')">a</button>
+                                <button onclick="key('s')">s</button>
+                                <button onclick="key('d')">d</button>
+                                <button onclick="key('f')">f</button>
+                                <button onclick="key('g')">g</button>
+                                <button onclick="key('h')">h</button>
+                                <button onclick="key('j')">j</button>
+                                <button onclick="key('k')">k</button>
+                                <button onclick="key('l')">l</button>
+
+                            </div>
+                            <div class="note_keys_c">
+                                <button ca onclick="change_to_cap()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="white" d="m228.24 115.76l-96-96a6 6 0 0 0-8.48 0l-96 96A6 6 0 0 0 32 126h42v82a14 14 0 0 0 14 14h80a14 14 0 0 0 14-14v-82h42a6 6 0 0 0 4.24-10.24M176 114a6 6 0 0 0-6 6v88a2 2 0 0 1-2 2H88a2 2 0 0 1-2-2v-88a6 6 0 0 0-6-6H46.49L128 32.49L209.51 114Z"/></svg></button>
+                                <button onclick="key('z')">z</button>
+                                <button onclick="key('x')">x</button>
+                                <button onclick="key('c')">c</button>
+                                <button onclick="key('v')">v</button>
+                                <button onclick="key('b')">b</button>
+                                <button onclick="key('n')">n</button>
+                                <button onclick="key('m')">m</button>
+                                <button ca onclick="cancel()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 5H9l-7 7l7 7h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-2 4l-6 6m0-6l6 6"/></svg></button>
+                            </div>
+                            <div class="note_keys_d">
+                                <button no onclick="change_to_no()">123</button>
+                                <button space onclick="key(' ')">space</button>
+                                <button no  onclick="">return</button>
+
+                            </div>
+                        </div>
+                        <div class="note_keys_capital" id="note_keys_capital">
+                            <div class="note_keys_a">
+                                <button onclick="key('Q')">Q</button>
+                                <button onclick="key('W')">W</button>
+                                <button onclick="key('E')">E</button>
+                                <button onclick="key('R')">R</button>
+                                <button onclick="key('T')">T</button>
+                                <button onclick="key('Y')">Y</button>
+                                <button onclick="key('U')">U</button>
+                                <button onclick="key('I')">I</button>
+                                <button onclick="key('O')">O</button>
+                                <button onclick="key('P')">P</button>
+                            </div>
+                            <div class="note_keys_b">
+                                <button onclick="key('A')">A</button>
+                                <button onclick="key('S')">S</button>
+                                <button onclick="key('D')">D</button>
+                                <button onclick="key('F')">F</button>
+                                <button onclick="key('G')">G</button>
+                                <button onclick="key('H')">H</button>
+                                <button onclick="key('J')">J</button>
+                                <button onclick="key('K')">K</button>
+                                <button onclick="key('L')">L</button>
+
+                            </div>
+                            <div class="note_keys_c">
+                                <button ca onclick="change_to_sml()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="white" d="M231.39 123.06A8 8 0 0 1 224 128h-40v80a16 16 0 0 1-16 16H88a16 16 0 0 1-16-16v-80H32a8 8 0 0 1-5.66-13.66l96-96a8 8 0 0 1 11.32 0l96 96a8 8 0 0 1 1.73 8.72"/></svg></button>
+                                <button onclick="key('Z')">Z</button>
+                                <button onclick="key('X')">X</button>
+                                <button onclick="key('C')">C</button>
+                                <button onclick="key('V')">V</button>
+                                <button onclick="key('B')">B</button>
+                                <button onclick="key('N')">N</button>
+                                <button onclick="key('M')">M</button>
+                                <button ca onclick="cancel()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 5H9l-7 7l7 7h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-2 4l-6 6m0-6l6 6"/></svg></button>
+                            </div>
+                            <div class="note_keys_d">
+                                <button no onclick="change_to_no()">123</button>
+                                <button space onclick="key(' ')">space</button>
+                                <button no  onclick="">return</button>
+
+                            </div>
+                        </div>
+                        <div class="note_keys_no" id="note_keys_no">
+                            <div class="note_keys_a">
+                                <button onclick="key('1')">1</button>
+                                <button onclick="key('2')">2</button>
+                                <button onclick="key('3')">3</button>
+                                <button onclick="key('4')">4</button>
+                                <button onclick="key('5')">5</button>
+                                <button onclick="key('6')">6</button>
+                                <button onclick="key('7')">7</button>
+                                <button onclick="key('8')">8</button>
+                                <button onclick="key('9')">9</button>
+                                <button onclick="key('0')">0</button>
+                            </div>
+                            <div style="width: 100%; margin: 0;" class="note_keys_b">
+                                <button onclick="key('-')">-</button>
+                                <button onclick="key('/')">/</button>
+                                <button onclick="key(':')">:</button>
+                                <button onclick="key(';')">;</button>
+                                <button onclick="key(`br`)">(</button>
+                                <button onclick="key(`&#41;`)">)</button>
+                                <button onclick="key('$')">$</button>
+                                <button onclick="key('&')">&</button>
+                                <button onclick="key('@')">@</button>
+                                <button onclick='key(`"`)'>"</button>
+
+                            </div>
+                            <div class="note_keys_c">
+                                <button style="font-size: 10px;" ca onclick="change_to_sy()">#+=</button>
+                                <button onclick="key('.')">.</button>
+                                <button onclick="key(',')">,</button>
+                                <button onclick="key('?')">?</button>
+                                <button onclick="key('!')">!</button>
+                                <button onclick="key(`'`)">'</button>
+                                <button ca onclick="cancle()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 5H9l-7 7l7 7h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-2 4l-6 6m0-6l6 6"/></svg></button>
+                            </div>
+                            <div class="note_keys_d">
+                                <button no onclick="change_to_sml()">abc</button>
+                                <button space onclick="key(' ')">space</button>
+                                <button no  onclick="">return</button>
+
+                            </div>
+                        </div>
+                        <div class="note_keys_sy" id="note_keys_sy">
+                            <div class="note_keys_a">
+                                <button onclick="key('[')">[</button>
+                                <button onclick="key(']')">]</button>
+                                <button onclick="key('{')">{</button>
+                                <button onclick="key('}')">}</button>
+                                <button onclick="key('#')">#</button>
+                                <button onclick="key('%')">%</button>
+                                <button onclick="key('^')">^</button>
+                                <button onclick="key('*')">*</button>
+                                <button onclick="key('+')">+</button>
+                                <button onclick="key('=')">=</button>
+                            </div>
+                            <div style="width: 100%; margin: 0;" class="note_keys_b">
+                                <button onclick="key('_')">_</button>
+                                <button onclick="key('/')">/</button>
+                                <button onclick="key('|')">|</button>
+                                <button onclick="key('~')">~</button>
+                                <button onclick="key('<')"><</button>
+                                <button onclick="key('>')">></button>
+                                <button onclick="key('€')">&euro;</button>
+                                <button onclick="key('£')">&pound;</button>
+                                <button onclick="key('¥')">&yen;</button>
+                                <button onclick="key('.')">.</button>
+
+                            </div>
+                            <div class="note_keys_c">
+                                <button style="font-size: 10px;" ca onclick="change_to_no()">123</button>
+                                <button onclick="key('.')">.</button>
+                                <button onclick="key(',')">,</button>
+                                <button onclick="key('?')">?</button>
+                                <button onclick="key('!')">!</button>
+                                <button onclick="key(`'`)">'</button>
+                                <button ca onclick="cancel()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 5H9l-7 7l7 7h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-2 4l-6 6m0-6l6 6"/></svg></button>
+                            </div>
+                            <div class="note_keys_d">
+                                <button no onclick="change_to_sml()">abc</button>
+                                <button space onclick="key(' ')">space</button>
+                                <button no  onclick="">return</button>
+
+                            </div>
+                        </div>
                 </div>
                 <button svg id="loading">
                     <p>note</p>

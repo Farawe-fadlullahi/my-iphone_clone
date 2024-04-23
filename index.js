@@ -51,6 +51,13 @@ let price = document.getElementById('price')
 let goods = document.getElementById('goods')
 let qty = document.getElementById('qty')
 let list_tbody = document.getElementById('list_tbody')
+let note_keys = document.getElementById('note_keys')
+let note_keys_capital = document.getElementById('note_keys_capital')
+let note_keys_no = document.getElementById('note_keys_no')
+let note_keys_sy = document.getElementById('note_keys_sy')
+let note_disp = document.getElementById('note_disp')
+let note_input = document.getElementById('note_input')
+let note_dis = document.getElementById('note_dis')
 let con =false
 let kept_value=''
 let second=''
@@ -58,6 +65,7 @@ let ans=''
 let operator=''
 let user_pass=''
 let i=0
+let note_array=JSON.parse(localStorage.getItem('note_array'))||[]
 let date=new Date()
 let day=['sunday','monday','tuesday','wednesday','thursday','friday','saturday']
 let month=['January','February','March','April','May','June','July','Agust','September','October','November','December']
@@ -425,4 +433,69 @@ function disp_list() {
         </tr>
         `
     });
+    }
+    function change_to_cap() {
+        note_keys.style.display='none'
+        note_keys_capital.style.display='block'
+    }
+    function change_to_sml() {
+        note_keys_capital.style.display='none'
+        note_keys.style.display='block'
+    }
+    function change_to_no() {
+        note_keys_capital.style.display='none'
+        note_keys.style.display='none'
+        note_keys_no.style.display='block'
+    }
+    function change_to_sy() {
+        note_keys_capital.style.display='none'
+        note_keys.style.display='none'
+        note_keys_no.style.display='none'
+    }
+    function key(value) {
+        if (value=='br') {
+            note_input.value+='('
+            note
+            
+        }
+        else{
+            note_input.value+=value
+        }
+    }
+    
+    function add_note() {
+        
+    if (note_input.value=='') {
+        alert('write something')
+    } else {
+        note_disp.style.display='block'
+        note_input.style.display='none'
+        note_array.push(note_input.value)
+        localStorage.setItem(`note`,JSON.stringify(note_array))
+        show_note()
+        note_input.value=''
+        
+    }
+}
+    function delete_note(param){
+        console.log(param);
+        note_array.splice(param,1)
+        localStorage.removeItem(`note`)
+        show_note()
+    }
+    function cancel() {
+        let current_val=note_input.value
+        note_input.value=current_val.slice(0,-1)
+    }
+    function show_note(){
+        note_disp.innerHTML=''
+        note_array.forEach((element,index) => {
+            
+        note_disp.innerHTML+=`<div id="note_dis" note_dis>(${index+1}) ${element} <button style='margin-bottom: 0; margin-right: 0; padding: 0; width:30px;font-size:10px; height:20px; border:1px solid black; border-radius: 5px;' onclick="delete_note(${index})">delete</button></div>`
+        });
+    }
+    function back_textarea() {
+        note_disp.style.display='none'
+        note_input.style.display='block'
+        console.log();
     }
