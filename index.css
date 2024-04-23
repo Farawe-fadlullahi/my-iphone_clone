@@ -700,13 +700,8 @@ div[note_dis]{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* overflow-x: scroll; */
-    /* overflow-y: scroll; */
     flex-wrap: wrap;
 }
-/* div[note_dis]::-webkit-scrollbar{
-    display: none;
-} */
 .note_disp textarea{
     width: 100%;
     height:100%;

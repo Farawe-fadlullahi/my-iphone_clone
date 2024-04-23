@@ -65,7 +65,7 @@ let ans=''
 let operator=''
 let user_pass=''
 let i=0
-let note_array=JSON.parse(localStorage.getItem('note_array'))||[]
+let note_array=JSON.parse(localStorage.getItem('note'))||[]
 let date=new Date()
 let day=['sunday','monday','tuesday','wednesday','thursday','friday','saturday']
 let month=['January','February','March','April','May','June','July','Agust','September','October','November','December']
@@ -477,12 +477,6 @@ function disp_list() {
         
     }
 }
-    function delete_note(param){
-        console.log(param);
-        note_array.splice(param,1)
-        localStorage.removeItem(`note`)
-        show_note()
-    }
     function cancel() {
         let current_val=note_input.value
         note_input.value=current_val.slice(0,-1)
@@ -498,4 +492,10 @@ function disp_list() {
         note_disp.style.display='none'
         note_input.style.display='block'
         console.log();
+    }
+    function delete_note(param){
+        console.log(param);
+        note_array.splice(param,1)
+        localStorage.removeItem(`note`,JSON.stringify(note_array[`${param}`]))
+        show_note()
     }
