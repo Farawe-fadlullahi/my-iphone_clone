@@ -529,12 +529,284 @@ aside[a]{
     left: 15px;
 }
 .call_inner{
-    background-color: brown;
+    background-color: black;
     width: 90%;
     height: 90%;
     position: absolute;
     top: 36px;
     left: 15px;
+}
+#dial{
+    width: 100%;
+    height: 89%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#call_switcher{
+    width: 100%;
+    background-color:black;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.carrier{
+    margin-top: -20px;
+    background-color:black;
+    width: 90%;
+    height: 350px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 0px;
+}
+.carrier button{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: 700;
+    border: 0;
+    background-color: #333333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+p[dial]{
+    font-size: 10px;
+    font-weight: 900;
+    margin-top: -5px;
+}
+#call_switcher button{
+    width: 40px;
+    height: 35px;
+    background-color: transparent;
+    border: 0;
+}
+#calling{
+    width: 100%;
+    height: 110%;
+    background-color: #595c60;
+    position:absolute;
+    z-index: 10;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+
+}
+#calling_up{
+    width: 80%;
+    height: 50px;
+    background-color: #595c60;
+    position: absolute;
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#calling_down{
+    width: 95%;
+    height: 35%;
+    background-color: #595c60;
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#calling_down div{
+    width: 73px;
+    height: 73px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#calling_down div button{
+    width:  60px;
+    height: 160px;
+    border-radius: 100%;
+    background-color: #616569 ;
+    border: 0;
+}
+#calling_down div p{
+    margin-bottom: -5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+}
+p[da]{
+    font-size: 17px;
+    font-family: sans-serif;
+    color: #b3b4bb;
+    font-weight: 600;
+}
+#dailing_no{
+    margin-top: -25px;
+    font-size: 25px;
+    font-family: sans-serif;
+    color: white;
+    font-weight: 800;
+}
+#contacts_{
+    width: 100%;
+    height: 89%;
+    position: absolute;
+    z-index: 4;
+    background-color: blue;
+    top: 0;
+    visibility: hidden;
+}
+#recent_{
+    width: 100%;
+    height: 89%;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    visibility: hidden;
+}
+#recent_l{
+    width: 100%;
+    height: 90%;
+    background-color: #616569;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#recent_l::-webkit-scrollbar{
+    display: none;
+}
+#recentlog{
+    width: 100%;
+    height: 40px;
+    background-color: #fa9712;
+    display: flex;
+    margin-top: 5px;
+}
+#recent_details{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    visibility:hidden ;
+}
+.recent_de_a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom,#bfc0c4,#9fa2ae);
+    width: 100%;
+    height: 70%;
+}
+.recent_de_a nav{
+    width: 100%;
+}
+.recent_de_a aside{
+    background-color: #9095a0;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 100%;
+}
+.recent_de_a footer{
+    width: 100%;
+    height: 14.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.recent_de_a main{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+main button{
+    width:23.5%;
+    height: 80%;
+    border: 0;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #7f8392;
+}
+.recent_de_b{
+    width: 100%;
+    height: 33%;
+    background-color: black;
+    overflow-y: scroll;
+    padding: 15px 0 12px 5px;
+
+}
+.recent_de_b::-webkit-scrollbar{
+    display: none;
+}
+.space_fill{
+    background-color: black;
+    /* border-top:2px solid gray ;
+    border-bottom:2px solid gray ; */
+    width: 100%;
+}
+.space_fill p{
+    font-size: 15px;
+     font-weight: 800;
+     color: white;
+}
+.space{
+    width: 8%;
+    height: 100%;
+    background-color:black ;
+    display: flex;
+    align-items: center;
+}
+button[dey]{
+    background-color: transparent;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -33px;
+    margin-left: 220px;
+    border-radius: 100%;
+    border:2px solid blue;
+    color: blue;
+
+}
+#favourite{
+    width: 100%;
+    height: 89%;
+    position: absolute;
+    z-index: 4;
+    background-color:black;
+    top: 0;
+    visibility: hidden;
+}
+#voicemail{
+    width: 100%;
+    height: 89%;
+    position: absolute;
+    z-index: 4;
+    background-color: blue;
+    top: 0;
+    visibility: hidden;
 }
 .message_inner{
     background-color: brown;
@@ -569,12 +841,23 @@ aside[a]{
     left: 15px;
 }
 .sub_inner{
-    background-color: brown;
+    background-color: blach;
     width: 90%;
     height: 90%;
     position: absolute;
     top: 36px;
     left: 15px;
+}
+#sub_disp{
+    width: 100%;
+    height: 400px;
+    background-image: url(airtime\ bg.webp);
+    background-size: cover;
+    background-position: center;
+    overflow-y: scroll;
+}
+#sub_disp::-webkit-scrollbar{
+    display: none;
 }
 .cart_inner{
     background-image: url(cart\ bg.avif);
@@ -671,7 +954,7 @@ button[merge]{
 .list::-webkit-scrollbar{
     display: none;
 }
-table,thead,th,tbody,td{
+table,thead,th,tbody,td,tr{
     font-size: 13px;
 }
 .note_disp{
@@ -845,6 +1128,13 @@ button[space]{
 }
 .note_keys_no{
     display: none;
+}
+#copy{
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.603);
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
 }
 
 

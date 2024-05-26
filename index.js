@@ -58,6 +58,25 @@ let note_keys_sy = document.getElementById('note_keys_sy')
 let note_disp = document.getElementById('note_disp')
 let note_input = document.getElementById('note_input')
 let note_dis = document.getElementById('note_dis')
+let network = document.getElementById('network')
+let n_price = document.getElementById('n_price')
+let sub_disp = document.getElementById('sub_disp')
+let tbodysub = document.getElementById('tbodysub')
+let used_ = document.getElementById('used_')
+let load = document.getElementById('load')
+let dial = document.getElementById('dial')
+let calling = document.getElementById('calling')
+let contacts_ = document.getElementById('contacts_')
+let recent_ = document.getElementById('recent_')
+let favourite = document.getElementById('favourite')
+let voicemail = document.getElementById('voicemail')
+let recent_l = document.getElementById('recent_l')
+let recent_details = document.getElementById('recent_details')
+let rdetials_no = document.getElementById('rdetials_no')
+let detials_no = document.getElementById('detials_no')
+let detials_t = document.getElementById('detials_t')
+let detials_day = document.getElementById('detials_day')
+let re_disp_no = document.getElementById('re_disp_no')
 let con =false
 let kept_value=''
 let second=''
@@ -65,7 +84,9 @@ let ans=''
 let operator=''
 let user_pass=''
 let i=0
+let sub_array=JSON.parse(localStorage.getItem('recharge'))||[]
 let note_array=JSON.parse(localStorage.getItem('note'))||[]
+let recent_array=JSON.parse(localStorage.getItem(`recent_call`))||[]
 let date=new Date()
 let day=['sunday','monday','tuesday','wednesday','thursday','friday','saturday']
 let month=['January','February','March','April','May','June','July','Agust','September','October','November','December']
@@ -76,7 +97,7 @@ function un_see() {
     password_sect.style.display = 'none'
     home_sect.style.display = 'none'
 }
- un_see()
+//  un_see() 
 lockscreen_date.innerHTML=`${day[date.getDay()]}, ${date.getDate()} ${month[date.getMonth()]}`
 lockscreen_time.innerHTML=`${date.getHours()}:${date.getMinutes()}`
 function outline_6() {
@@ -131,8 +152,6 @@ function btn_password(params) {
         clear_each()
     }else{
         if (user_pass.length==6) {
-            
-    console.log(user_pass.length);
     pin.style.animationName = 'incorrect'
     pin.style.animationDuration='0.2s'
     pin.style.animationDirection='alternate'
@@ -140,15 +159,12 @@ function btn_password(params) {
     Try_again.innerText=`Try Again`
     wrong_password.innerText=`Wrong Password`
     clear_each()
-    console.log(user_pass.length);
      }}
 }
 function clear_each() {
     i=0
-    console.log(i)
-    console.log(document.getElementById(`fill${i}`))
     document.querySelectorAll(`.fill`).forEach((element )=> {
-        element.style.backgroundColor='transparent'
+        element.style.backgroundColor=''
     });
     user_pass=''
 }
@@ -271,11 +287,16 @@ function app_camera() {
 function app_call() {
     pa_caro.style.display='none'
     call_section.style.display='block'
-    call_inner.style.display='none'
-    setTimeout(()=>{
+    // call_inner.style.display='none'
+    // setTimeout(()=>{
          call_inner.style.display='block'
-         call_inner.style.zIndex='5'
-    },3000);
+    //      call_inner.style.zIndex='5'
+    // },3000);
+        f.style.fill=`#3c3939`
+        r.style.fill=`#3c3939`
+        d.style.fill=`blue`
+        v.style.fill=`#3c3939`
+        c.style.fill=`#3c3939`
 }
 function app_message() {
     pa_caro.style.display='none'
@@ -343,9 +364,7 @@ function under_construction_home() {
 function btn(params) {
     calc_screen.value+=params
 }function but(signs) {
-   console.log(signs);
    operator=signs
-   console.log(operator);
 
 if (operator=='+') {
     btngray.style.backgroundColor='gray'
@@ -491,11 +510,181 @@ function disp_list() {
     function back_textarea() {
         note_disp.style.display='none'
         note_input.style.display='block'
-        console.log();
     }
     function delete_note(param){
-        console.log(param);
         note_array.splice(param,1)
         localStorage.removeItem(`note`,JSON.stringify(note_array[`${param}`]))
         show_note()
+    }
+    function generate_airtime() {
+        let pin=''
+        for (let index = 0; index < 9; index++) {
+        pin+=Math.floor(Math.random()*10)
+            
+        }
+        airtime_obj={
+            Network:network.value,
+            Price:n_price.value,
+            Pin:pin,
+            used:false
+        }
+        sub_array.push(airtime_obj)
+        localStorage.setItem(`recharge`,JSON.stringify(sub_array))
+        function card_list(){
+            
+        tbodysub.innerHTML=''
+        sub_array.forEach((element,ind) => {
+            tbodysub.innerHTML+=
+            `
+            <tr style="border: 2px solid black ; padding: 2px; border-collapse: collapse;"> 
+            <td style="border: 2px solid black ; padding: 2px; border-collapse: collapse;">${ind+1}</td>
+            <td style="border: 2px solid black ; padding: 2px; border-collapse: collapse;">${element.Network}</td>
+            <td style="border: 2px solid black ; padding: 2px; border-collapse: collapse;">${element.Price}</td>
+            <td style="border: 2px solid black ; padding: 2px; border-collapse: collapse; font-weight:900; color:red;">${element.Pin}<button id='copy' onclick="copy(${element.Pin})" ><span class="material-symbols-outlined">content_copy</span></button></td>
+            <td id='used_'>${element.used==false?`unused`:`used`}</td>
+        </tr>`
+        });
+        }
+        card_list()
+    }
+    function copy(PIN) {
+        navigator.clipboard.writeText(PIN)
+        alert('pin copied successfully')
+    }
+    function btn_dial(params) {
+        load.value+=params
+    }
+    function clear_dial() {
+        let current_val=load.value
+        load.value=current_val.slice(0,-1)
+    }
+    function recharge() {
+        loader=load.value
+        let foundpin=sub_array.find((obj)=> load.value==obj.Pin )
+        if (foundpin) {
+        if (foundpin.used==false) {
+            console.log(foundpin.used);
+            alert(`you have sucessfully recharged ${foundpin.Network} of #${foundpin.Price}`)
+            foundpin.used=true
+            card_list()
+        }else{
+            alert(`card has been used`)
+        }
+        }else{
+            if (load.value=='') {
+                alert('jj')
+            }else{
+                dailing_no.innerHTML=load.value
+                caller()
+
+            }
+        }
+    }
+    function tocontacts_() {
+        f.style.fill=`#3c3939`
+        r.style.fill=`#3c3939`
+        d.style.fill=`#3c3939`
+        v.style.fill=`#3c3939`
+        c.style.fill=`blue`
+        dial.style.visibility='hidden'
+        recent_.style.visibility='hidden'
+        favourite.style.visibility='hidden'
+        voicemail.style.visibility='hidden'
+        contacts_.style.visibility=`visible`
+    }
+    function tovoicemail() {
+        f.style.fill=`#3c3939`
+        r.style.fill=`#3c3939`
+        d.style.fill=`#3c3939`
+        v.style.fill=`blue`
+        c.style.fill=`#3c3939`
+        dial.style.visibility='hidden'
+        recent_.style.visibility='hidden'
+        favourite.style.visibility='hidden'
+        voicemail.style.visibility='visible'
+        contacts_.style.visibility=`hidden`
+    }
+    function torecent_() {
+        f.style.fill=`#3c3939`
+        r.style.fill=`blue`
+        d.style.fill=`#3c3939`
+        v.style.fill=`#3c3939`
+        c.style.fill=`#3c3939`
+        dial.style.visibility='hidden'
+        recent_.style.visibility='visible'
+        favourite.style.visibility='hidden'
+        voicemail.style.visibility='hidden'
+        contacts_.style.visibility=`hidden`
+    }
+    function tofavourite() {
+        f.style.fill=`blue`
+        r.style.fill=`#3c3939`
+        d.style.fill=`#3c3939`
+        v.style.fill=`#3c3939`
+        c.style.fill=`#3c3939`
+        dial.style.visibility='hidden'
+        recent_.style.visibility='hidden'
+        favourite.style.visibility='visible'
+        voicemail.style.visibility='hidden'
+        contacts_.style.visibility=`hidden`
+    }
+    function todail() {
+        recent_details.style.visibility=`hidden`
+        f.style.fill=`#3c3939`
+        r.style.fill=`#3c3939`
+        d.style.fill=`blue`
+        v.style.fill=`#3c3939`
+        c.style.fill=`#3c3939`
+        dial.style.visibility='visible'
+        recent_.style.visibility='hidden'
+        favourite.style.visibility='hidden'
+        voicemail.style.visibility='hidden'
+        contacts_.style.visibility=`hidden`
+    }
+    function callerend() {
+        calling.style.visibility=`hidden`
+    }
+    function detials(par) {
+        console.log(par);
+        let foundid=recent_array.find((obj)=> par==obj.id)
+        if (foundid) {
+            recent_details.style.visibility=`visible`
+            console.log(foundid);
+            detials_no.innerHTML=foundid.Nom
+            detials_t.innerHTML=foundid.time
+            detials_day.innerHTML=foundid.detials_time
+        }
+    }
+    function see_more() {
+        recent_details.style.visibility=`hidden`
+    }
+    function call_directly(params) {
+                load.value=detials_no.innerHTML
+                caller()
+    }
+    function caller() {
+        let pin=''
+        for (let index = 0; index < 9; index++) {
+        pin+=Math.floor(Math.random()*10)
+        }
+                obj={
+                    id:pin,
+                    time:`${date.getHours()}:${date.getMinutes()} `,
+                    detials_time:`${day[date.getDay()]}-${month[date.getMonth()]}-${date.getDate()}-${date.getFullYear()}`,
+                    Nom:load.value,
+                }
+                recent_array.push(obj)
+                localStorage.setItem('recent_call',JSON.stringify(recent_array))
+                recent_l.innerHTML=''
+                recent_array.forEach((element) => {
+                    recent_l.innerHTML+=`<div id="recentlog"><div class="space"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><path fill="#818488" d="m20.333 21.482l2.24-2.24a2.17 2.17 0 0 1 2.337-.48l2.728 1.092A2.17 2.17 0 0 1 29 21.866v4.961a2.167 2.167 0 0 1-2.284 2.169C7.594 27.806 3.732 11.61 3.015 5.408A2.162 2.162 0 0 1 5.169 3h4.873a2.17 2.17 0 0 1 2.012 1.362l1.091 2.728a2.17 2.17 0 0 1-.48 2.337l-2.24 2.24s1.242 8.732 9.908 9.815"/><path fill="#818488" d="M20 4v2h4.586L18 12.586L19.414 14L26 7.414V12h2V4z"/></svg></div><div class="space_fill"><p id="re_disp_no">${element.Nom }</p><p style='margin-top: -15px; color:gray; font-size:10px;'>mobile</p><p style="font-size: 10px;margin-top: -45px; margin-left:190px; color:gray; ">${element.time}</p><button dey onclick="detials(${element.id})">i</button></div></div>`
+                    
+                console.log(`${element.detials_time}`);
+                
+                });
+                calling.style.visibility=`visible`
+                setInterval(()=>{
+                    calling.style.visibility=`hidden`
+                },7000);
+                load.value=''
     }
